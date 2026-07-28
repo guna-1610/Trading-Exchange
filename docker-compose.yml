@@ -1,0 +1,7 @@
+services:
+  exchange:
+    build: .
+    ports:
+      - "8080:8080"
+  environment:
+      - GOOGLE_CLIENT_ID=876232009130-u994foj6shn7dmb0lvem3dthpqv203v6.apps.googleusercontent.com

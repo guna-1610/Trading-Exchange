@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: trading-exchange
+  jackson:
+    default-property-inclusion: non_null
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+# --- Security ---------------------------------------------------------------
+security:
+  jwt:
+    # HMAC-SHA256 signing secret. Override in production via SECURITY_JWT_SECRET.
+    # Must be at least 32 bytes.
+    secret: ${SECURITY_JWT_SECRET:dev-secret-please-change-3f8c1a9b2e7d4056a1c8f39e6b0d2748}
+    ttl-minutes: 120
+  google:
+    # Set GOOGLE_CLIENT_ID to enable "Sign in with Google". Leave blank to disable.
+    client-id: ${GOOGLE_CLIENT_ID:876232009130-u994foj6shn7dmb0lvem3dthpqv203v6.apps.googleusercontent.com}
+
+logging:
+  level:
+    root: INFO
+    com.exchange: INFO
